@@ -1,10 +1,10 @@
-import React, { useCallback, type JSX } from "react";
+import React, { type JSX, useCallback } from "react";
 import { ColorInputBaseProps } from "../types";
 
 import { validHex } from "../utils/validate";
-import { ColorInput } from "./common/ColorInput";
+import { ColorInput } from "./common";
 
-interface HexColorInputProps extends ColorInputBaseProps {
+export interface HexColorInputProps extends ColorInputBaseProps {
   /** Enables `#` prefix displaying */
   prefixed?: boolean;
   /** Allows `#rgba` and `#rrggbbaa` color formats */

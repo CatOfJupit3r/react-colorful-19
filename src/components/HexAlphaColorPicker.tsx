@@ -1,11 +1,11 @@
 import React, { type JSX } from "react";
 
-import { AlphaColorPicker } from "./common/AlphaColorPicker";
+import { AlphaColorPicker } from "./common";
 import { ColorModel, ColorPickerBaseProps } from "../types";
 import { equalHex } from "../utils/compare";
 import { hexToHsva, hsvaToHex } from "../utils/convert";
 
-const colorModel: ColorModel<string> = {
+export const colorModel: ColorModel<string> = {
   defaultColor: "0001",
   toHsva: hexToHsva,
   fromHsva: hsvaToHex,

@@ -1,7 +1,7 @@
 import React, { type JSX } from "react";
 import { formatClassName } from "../../utils/format";
 
-interface Props {
+export interface Props {
   className?: string;
   top?: number;
   left: number;

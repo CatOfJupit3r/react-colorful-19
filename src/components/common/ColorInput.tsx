@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useCallback, type JSX } from "react";
+import React, { type JSX, useCallback, useEffect, useState } from "react";
 
 import { useEventCallback } from "../../hooks/useEventCallback";
 import { ColorInputBaseProps } from "../../types";
 
-interface Props extends ColorInputBaseProps {
+export interface Props extends ColorInputBaseProps {
   /** Blocks typing invalid characters and limits string length */
   escape: (value: string) => string;
   /** Checks that value is valid color string */

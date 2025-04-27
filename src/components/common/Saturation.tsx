@@ -6,7 +6,7 @@ import { hsvaToHslString } from "../../utils/convert";
 import { clamp } from "../../utils/clamp";
 import { round } from "../../utils/round";
 
-interface Props {
+export interface Props {
   hsva: HsvaColor;
   onChange: (newColor: { s: number; v: number }) => void;
 }

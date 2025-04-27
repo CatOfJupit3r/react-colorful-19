@@ -54,7 +54,7 @@ const isInvalid = (event: MouseEvent | TouchEvent, hasTouch: boolean): boolean =
   return hasTouch && !isTouch(event);
 };
 
-interface Props {
+export interface Props {
   onMove: (interaction: Interaction) => void;
   onKey: (offset: Interaction) => void;
   children: React.ReactNode;

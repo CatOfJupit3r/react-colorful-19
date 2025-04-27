@@ -1,11 +1,11 @@
 import React, { type JSX } from "react";
 
-import { ColorPicker } from "./common/ColorPicker";
+import { ColorPicker } from "./common";
 import { ColorModel, ColorPickerBaseProps } from "../types";
 import { equalColorString } from "../utils/compare";
 import { hslStringToHsva, hsvaToHslString } from "../utils/convert";
 
-const colorModel: ColorModel<string> = {
+export const colorModel: ColorModel<string> = {
   defaultColor: "hsl(0, 0%, 0%)",
   toHsva: hslStringToHsva,
   fromHsva: hsvaToHslString,

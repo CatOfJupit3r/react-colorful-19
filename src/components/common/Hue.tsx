@@ -8,7 +8,7 @@ import { formatClassName } from "../../utils/format";
 import { clamp } from "../../utils/clamp";
 import { round } from "../../utils/round";
 
-interface Props {
+export interface Props {
   className?: string;
   hue: number;
   onChange: (newHue: { h: number }) => void;

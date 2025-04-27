@@ -9,7 +9,7 @@ import { clamp } from "../../utils/clamp";
 import { round } from "../../utils/round";
 import { HsvaColor } from "../../types";
 
-interface Props {
+export interface Props {
   className?: string;
   hsva: HsvaColor;
   onChange: (newAlpha: { a: number }) => void;

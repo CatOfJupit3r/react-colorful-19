@@ -8,7 +8,7 @@ import { useColorManipulation } from "../../hooks/useColorManipulation";
 import { useStyleSheet } from "../../hooks/useStyleSheet";
 import { formatClassName } from "../../utils/format";
 
-interface Props<T extends AnyColor> extends Partial<ColorPickerBaseProps<T>> {
+export interface Props<T extends AnyColor> extends Partial<ColorPickerBaseProps<T>> {
   colorModel: ColorModel<T>;
 }
 

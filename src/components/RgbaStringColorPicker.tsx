@@ -1,11 +1,11 @@
 import React, { type JSX } from "react";
 
-import { AlphaColorPicker } from "./common/AlphaColorPicker";
+import { AlphaColorPicker } from "./common";
 import { ColorModel, ColorPickerBaseProps } from "../types";
 import { equalColorString } from "../utils/compare";
-import { rgbaStringToHsva, hsvaToRgbaString } from "../utils/convert";
+import { hsvaToRgbaString, rgbaStringToHsva } from "../utils/convert";
 
-const colorModel: ColorModel<string> = {
+export const colorModel: ColorModel<string> = {
   defaultColor: "rgba(0, 0, 0, 1)",
   toHsva: rgbaStringToHsva,
   fromHsva: hsvaToRgbaString,
