@@ -44,4 +44,8 @@ export { RgbColor, RgbaColor, HslColor, HslaColor, HsvColor, HsvaColor } from ".
 // Tooling
 export { setNonce } from "./utils/nonce";
 
+// Common Color elements to compose your own ideal color picker!
 export * from "./components/common";
+
+// Hooks
+export * from "./hooks";
