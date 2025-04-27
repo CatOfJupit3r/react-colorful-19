@@ -10,7 +10,7 @@ on:
       - 'tsconfig.json'
       - '.eslintrc*'
       - '.prettierrc*'
-      - './.github/workflows/**/*'
+      - '.github/workflows/**/*'
   pull_request:
     types: [ opened, synchronize, reopened ]
     paths:
@@ -21,7 +21,7 @@ on:
       - 'tsconfig.json'
       - '.eslintrc*'
       - '.prettierrc*'
-      - './.github/workflows/**/*'
+      - '.github/workflows/**/*'
 
 jobs:
   build:
