@@ -1,4 +1,3 @@
-import { createRoot } from "react-dom/client";
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { RgbaColor } from "../../src";
