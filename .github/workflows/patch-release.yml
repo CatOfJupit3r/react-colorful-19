@@ -1,0 +1,71 @@
+name: Generate patch-package and Create Release
+
+on:
+  push:
+    paths:
+      - 'src/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/patch-release.yml'
+    branches:
+      - master
+      
+
+jobs:
+  create-patch-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: Install patch-package
+        run: npm install -g patch-package
+
+      - name: Install react-colorful
+        run: npm install react-colorful
+
+      - name: Copy ./dist to node_modules/react-colorful/dist
+        run: |
+          # Create backup of original files (optional)
+          cp -r node_modules/react-colorful/dist node_modules/react-colorful/dist.backup
+          
+          # Copy our built files to the package
+          rm -rf node_modules/react-colorful/dist
+          cp -r ./dist node_modules/react-colorful/
+
+      - name: Generate patch for react-colorful
+        run: npx patch-package react-colorful
+
+      - name: Get commit SHA
+        id: sha
+        run: echo "sha=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: patch-${{ steps.sha.outputs.sha }}
+          name: "${{ steps.sha.outputs.sha }} Patch | ${{ steps.date.outputs.date }}"
+          files: patches/react-colorful*.patch
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
