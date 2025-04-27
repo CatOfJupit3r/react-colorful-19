@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import React, { useState } from "react";
+import React, { useState, type JSX } from "react";
 import Frame from "react-frame-component";
 import { HexColorInput } from "../../../src";
 import { ColorPickerBaseProps, AnyColor } from "../../../src/types";
@@ -36,7 +36,7 @@ export function PickerPreview<T extends AnyColor>({
         </Wrapper>
         {title.startsWith("HEX") && (
           // @ts-ignore
-          <HexColorInput color={color} onChange={handleChange} prefixed alpha />
+          (<HexColorInput color={color} onChange={handleChange} prefixed alpha />)
         )}
       </PreviewDemo>
       <PreviewOutput>{JSON.stringify(color)}</PreviewOutput>

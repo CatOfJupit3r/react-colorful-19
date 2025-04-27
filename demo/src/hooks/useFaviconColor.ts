@@ -33,9 +33,9 @@ const createBackgroundCanvas = () => {
 };
 
 export const useFaviconColor = (color: string): void => {
-  const faviconNode = useRef<HTMLLinkElement>();
-  const canvas = useRef<HTMLCanvasElement>();
-  const backgroundCanvas = useRef<HTMLCanvasElement>();
+  const faviconNode = useRef<HTMLLinkElement>(undefined);
+  const canvas = useRef<HTMLCanvasElement>(undefined);
+  const backgroundCanvas = useRef<HTMLCanvasElement>(undefined);
 
   // create canvases only once
   if (!canvas.current) {
