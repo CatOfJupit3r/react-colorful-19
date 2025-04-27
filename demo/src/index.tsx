@@ -1,5 +1,5 @@
+import { createRoot } from "react-dom/client";
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
 import { RgbaColor } from "../../src";
 import { DevTools } from "./components/DevTools";
 import { useFaviconColor } from "./hooks/useFaviconColor";
@@ -91,5 +91,5 @@ const Demo = () => {
   );
 };
 
-const root = createRoot(document.getElementById("root"));
+const root = createRoot(document.getElementById("root")!);
 root.render(<Demo />);
