@@ -102,7 +102,7 @@ it("Triggers `onChange` after a mouse interaction", async () => {
   const handleChange = jest.fn();
   const result = render(<RgbaColorPicker onChange={handleChange} />);
   const saturation = result.container.querySelector(
-    ".react-colorful__saturation .react-colorful__interactive"
+    ".react-colorful__saturation .react-colorful__interactive",
   );
 
   fireEvent(saturation, new FakeMouseEvent("mousedown", { pageX: 0, pageY: 0 }));
@@ -129,7 +129,7 @@ it("Supports multitouch", async () => {
   const result = render(<HsvaColorPicker color={initialValue} onChange={handleChange} />);
   const hue = result.container.querySelector(".react-colorful__hue .react-colorful__interactive");
   const alpha = result.container.querySelector(
-    ".react-colorful__alpha .react-colorful__interactive"
+    ".react-colorful__alpha .react-colorful__interactive",
   );
 
   const firstFingerBefore = { pageX: 0, pageY: 0, identifier: 0, bubbles: true };
@@ -161,7 +161,7 @@ it("Pointer doesn't follow the mouse if it was released outside of the document 
   const handleChange = jest.fn();
   const result = render(<RgbaColorPicker onChange={handleChange} />);
   const saturation = result.container.querySelector(
-    ".react-colorful__saturation .react-colorful__interactive"
+    ".react-colorful__saturation .react-colorful__interactive",
   );
 
   // User presses and moves the cursor inside the window
@@ -180,7 +180,7 @@ it("Changes alpha channel value after an interaction", async () => {
 
   const result = render(<HslaColorPicker color={initialValue} onChange={handleChange} />);
   const alpha = result.container.querySelector(
-    ".react-colorful__alpha .react-colorful__interactive"
+    ".react-colorful__alpha .react-colorful__interactive",
   );
 
   fireEvent(alpha, new FakeMouseEvent("mousedown", { pageX: 0, pageY: 0 }));
@@ -193,7 +193,7 @@ it("Uses #rrggbbaa format if alpha channel value is less than 1", async () => {
   const handleChange = jest.fn((hex) => hex);
   const result = render(<HexAlphaColorPicker color="#112233" onChange={handleChange} />);
   const alpha = result.container.querySelector(
-    ".react-colorful__alpha .react-colorful__interactive"
+    ".react-colorful__alpha .react-colorful__interactive",
   );
 
   fireEvent(alpha, new FakeMouseEvent("mousedown", { pageX: 100, pageY: 0 }));
@@ -226,7 +226,7 @@ it("Captures arrow keys only", async () => {
 
   const result = render(<HsvStringColorPicker color={initialValue} onChange={handleChange} />);
   const saturation = result.container.querySelector(
-    ".react-colorful__saturation .react-colorful__interactive"
+    ".react-colorful__saturation .react-colorful__interactive",
   );
 
   saturation.focus();
@@ -253,7 +253,7 @@ it("Changes saturation with arrow keys", async () => {
 
   const result = render(<RgbColorPicker color={initialValue} onChange={handleChange} />);
   const hue = result.container.querySelector(
-    ".react-colorful__saturation .react-colorful__interactive"
+    ".react-colorful__saturation .react-colorful__interactive",
   );
 
   hue.focus();
@@ -284,7 +284,7 @@ it("Changes alpha with arrow keys", async () => {
 
   const result = render(<HsvaColorPicker color={initialValue} onChange={handleChange} />);
   const alpha = result.container.querySelector(
-    ".react-colorful__alpha .react-colorful__interactive"
+    ".react-colorful__alpha .react-colorful__interactive",
   );
 
   alpha.focus();
@@ -301,7 +301,7 @@ it("Ignores keyboard commands if the pointer is already on a saturation edge", a
   const initialValue = "hsla(200, 0%, 100%, 1)";
   const result = render(<HslaStringColorPicker color={initialValue} onChange={handleChange} />);
   const saturation = result.container.querySelector(
-    ".react-colorful__saturation .react-colorful__interactive"
+    ".react-colorful__saturation .react-colorful__interactive",
   );
 
   saturation.focus();
@@ -320,7 +320,7 @@ it("Ignores keyboard commands if the pointer is already on a alpha edge", async 
   const initialValue = "hsva(0, 0%, 0%, 1)";
   const result = render(<HsvaStringColorPicker color={initialValue} onChange={handleChange} />);
   const saturation = result.container.querySelector(
-    ".react-colorful__alpha .react-colorful__interactive"
+    ".react-colorful__alpha .react-colorful__interactive",
   );
 
   saturation.focus();
@@ -335,10 +335,10 @@ it("Sets proper `aria-valuetext` attribute value", async () => {
   const handleChange = jest.fn();
   const result = render(<RgbaStringColorPicker color="rgb(0, 0, 0, 0)" onChange={handleChange} />);
   const saturation = result.container.querySelector(
-    ".react-colorful__saturation .react-colorful__interactive"
+    ".react-colorful__saturation .react-colorful__interactive",
   );
   const alpha = result.container.querySelector(
-    ".react-colorful__alpha .react-colorful__interactive"
+    ".react-colorful__alpha .react-colorful__interactive",
   );
 
   expect(saturation.getAttribute("aria-valuetext")).toBe("Saturation 0%, Brightness 0%");
@@ -369,7 +369,7 @@ it("Supports any event that a regular div does", () => {
 
 it("Renders `HexColorInput` component properly", () => {
   const result = render(
-    <HexColorInput className="custom-input" color="#F00" placeholder="AABBCC" />
+    <HexColorInput className="custom-input" color="#F00" placeholder="AABBCC" />,
   );
 
   expect(result.container.firstChild).toMatchSnapshot();

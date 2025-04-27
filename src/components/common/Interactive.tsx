@@ -28,7 +28,7 @@ const getParentWindow = (node?: HTMLDivElement | null): Window => {
 const getRelativePosition = (
   node: HTMLDivElement,
   event: MouseEvent | TouchEvent,
-  touchId: null | number
+  touchId: null | number,
 ): Interaction => {
   const rect = node.getBoundingClientRect();
 

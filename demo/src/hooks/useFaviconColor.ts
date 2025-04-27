@@ -86,6 +86,6 @@ export const useFaviconColor = (color: string): void => {
       if (shouldReplace()) replaceFavicon(color);
     },
     500,
-    [color]
+    [color],
   );
 };

@@ -13,5 +13,5 @@ const colorModel: ColorModel<string> = {
 };
 
 export const HslaStringColorPicker = (
-  props: Partial<ColorPickerBaseProps<string>>
+  props: Partial<ColorPickerBaseProps<string>>,
 ): JSX.Element => <AlphaColorPicker {...props} colorModel={colorModel} />;

@@ -6,7 +6,7 @@ import { useEventCallback } from "./useEventCallback";
 export function useColorManipulation<T extends AnyColor>(
   colorModel: ColorModel<T>,
   color: T,
-  onChange?: (color: T) => void
+  onChange?: (color: T) => void,
 ): [HsvaColor, (color: Partial<HsvaColor>) => void] {
   // Save onChange callback in the ref for avoiding "useCallback hell"
   const onChangeCallback = useEventCallback<T>(onChange);

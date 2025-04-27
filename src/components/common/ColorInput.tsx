@@ -27,7 +27,7 @@ export const ColorInput = (props: Props): JSX.Element => {
       setValue(inputValue);
       if (validate(inputValue)) onChangeCallback(process ? process(inputValue) : inputValue);
     },
-    [escape, process, validate, onChangeCallback]
+    [escape, process, validate, onChangeCallback],
   );
 
   // Take the color from props if the last typed color (in local state) is not valid
@@ -36,7 +36,7 @@ export const ColorInput = (props: Props): JSX.Element => {
       if (!validate(e.target.value)) setValue(escape(color));
       onBlurCallback(e);
     },
-    [color, escape, validate, onBlurCallback]
+    [color, escape, validate, onBlurCallback],
   );
 
   // Update the local state when `color` property value is changed

@@ -20,7 +20,7 @@ export const HexColorInput = (props: HexColorInputProps): JSX.Element => {
   /** Escapes all non-hexadecimal characters including "#" */
   const escape = useCallback(
     (value: string) => value.replace(/([^0-9A-F]+)/gi, "").substring(0, alpha ? 8 : 6),
-    [alpha]
+    [alpha],
   );
 
   /** Validates hexadecimal strings */
