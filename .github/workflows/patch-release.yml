@@ -40,9 +40,6 @@ jobs:
 
       - name: Copy ./dist to node_modules/react-colorful/dist
         run: |
-          # Create backup of original files (optional)
-          cp -r node_modules/react-colorful/dist node_modules/react-colorful/dist.backup
-          
           # Copy our built files to the package
           rm -rf node_modules/react-colorful/dist
           cp -r ./dist node_modules/react-colorful/
