@@ -1,4 +1,4 @@
-import React from "react";
+import React, { type JSX } from "react";
 import { formatClassName } from "../../utils/format";
 
 interface Props {

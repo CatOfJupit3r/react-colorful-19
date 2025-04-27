@@ -1,4 +1,4 @@
-import React from "react";
+import React, { type JSX } from "react";
 
 import { Interactive, Interaction } from "./Interactive";
 import { Pointer } from "./Pointer";

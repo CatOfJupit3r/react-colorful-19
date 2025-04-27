@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, type JSX } from "react";
 
 import { useEventCallback } from "../../hooks/useEventCallback";
 import { ColorInputBaseProps } from "../../types";

@@ -11,7 +11,7 @@ const styleElementMap: Map<Document, HTMLStyleElement> = new Map();
 /**
  * Injects CSS code into the document's <head>
  */
-export const useStyleSheet = (nodeRef: RefObject<HTMLDivElement>): void => {
+export const useStyleSheet = (nodeRef: RefObject<HTMLDivElement | null>): void => {
   useIsomorphicLayoutEffect(() => {
     const parentDocument = nodeRef.current ? nodeRef.current.ownerDocument : document;
 

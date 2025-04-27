@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, type JSX } from "react";
 
 import { Hue } from "./Hue";
 import { Saturation } from "./Saturation";

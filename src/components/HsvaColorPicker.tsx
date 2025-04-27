@@ -1,4 +1,4 @@
-import React from "react";
+import React, { type JSX } from "react";
 
 import { AlphaColorPicker } from "./common/AlphaColorPicker";
 import { ColorModel, ColorPickerBaseProps, HsvaColor } from "../types";
